@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100e0c">
+<title>Для тебе ❤️</title>
+<style>
+:root{--gold:#d8b66d;--cream:#f5e8c9;--bg:#100e0c;--muted:#c8bda8}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#49351d 0%,#1d1710 38%,var(--bg) 78%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+main{max-width:680px;margin:auto;padding:24px 18px 60px}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;color:var(--gold);font:12px Arial,sans-serif}
+h1{font-size:clamp(42px,11vw,72px);font-weight:400;line-height:1.04;margin:22px 0 14px;color:#f8e7bd;text-shadow:0 0 28px #c99b4a55}
+h1 span{display:block;color:var(--gold);font-style:italic}
+.subtitle{font-size:18px;line-height:1.65;color:#e8dcc4;max-width:440px}
+button,.upload-label{border:1px solid var(--gold);background:linear-gradient(135deg,#b88c43,#725020);color:#fff7e6;padding:15px 23px;border-radius:999px;font-size:15px;letter-spacing:.5px;cursor:pointer;box-shadow:0 8px 28px #0008;margin-top:22px}
+.heart{font-size:32px;color:var(--gold);margin-top:24px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.18);text-shadow:0 0 24px #e9bd66}}
+.section{border:1px solid #9b783e88;background:#17130fdd;border-radius:22px;padding:24px;margin:18px 0;box-shadow:0 14px 35px #0005}
+h2{font-size:27px;font-weight:400;color:var(--gold);margin:0 0 15px;text-align:center}
+p{line-height:1.75;color:#e9dfcc}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+.unit{background:#272016;border:1px solid #8d6c39;border-radius:14px;padding:13px 4px;text-align:center}
+.unit b{display:block;font: bold 27px Arial,sans-serif;color:var(--gold)}
+.unit small{font:11px Arial,sans-serif;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gallery img{width:100%;height:170px;object-fit:cover;border-radius:13px;border:1px solid #8d6c39}
+.placeholder{border:1px dashed #9b783e;border-radius:14px;min-height:130px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:15px}
+.upload-label{display:inline-block;margin:14px 0 0}
+input[type=file]{display:none}
+.letter{font-size:18px;font-style:italic;white-space:pre-line}
+.signature{text-align:right;color:var(--gold);font-style:italic;font-size:20px}
+.footer{text-align:center;color:#a99470;font:11px Arial,sans-serif;letter-spacing:3px;margin-top:35px}
+.hidden{display:none}
+@media(max-width:380px){.counter{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <div class="eyebrow">A little something, just for you</div>
+  <h1>Для тебе,<span>Сонце ❤️</span></h1>
+  <div class="subtitle">Я хотіла подарувати тобі не просто слова, а маленький куточок, у якому живе наша історія.</div>
+  <div class="heart">✦ ♥ ✦</div>
+  <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Відкрити наш сюрприз ↓</button>
+</section>
+
+<section class="section" id="story">
+  <h2>Наша маленька вічність</h2>
+  <p style="text-align:center">З 5 січня 2026 року моя історія стала ще красивішою, бо в ній є ти.</p>
+  <div class="counter">
+    <div class="unit"><b id="days">—</b><small>ДНІВ</small></div>
+    <div class="unit"><b id="hours">—</b><small>ГОДИН</small></div>
+    <div class="unit"><b id="minutes">—</b><small>ХВИЛИН</small></div>
+    <div class="unit"><b id="seconds">—</b><small>СЕКУНД</small></div>
+  </div>
+  <p style="text-align:center;font-size:13px;color:#bba77f">І кожна мить поруч із тобою для мене особлива.</p>
+</section>
+
+
+
+
+<section class="section photo-slide">
+  <h2>Наші миті · 01 ✨</h2>
+  <p style="text-align:center">Один із тих моментів, які хочеться зберегти назавжди.</p>
+  <div class="gallery" id="gallery1"><div class="placeholder">♡<br>Перше ваше фото</div></div>
+  <label class="upload-label" for="photo1">Додати фото</label>
+  <input id="photo1" type="file" accept="image/*">
+</section>
+
+<section class="section photo-slide">
+  <h2>Наші миті · 02 ❤️</h2>
+  <p style="text-align:center">Ще один спогад, від якого на душі стає тепло.</p>
+  <div class="gallery" id="gallery2"><div class="placeholder">♡<br>Друге ваше фото</div></div>
+  <label class="upload-label" for="photo2">Додати фото</label>
+  <input id="photo2" type="file" accept="image/*">
+</section>
+
+<section class="section photo-slide">
+  <h2>Наші миті · 03 🌙</h2>
+  <p style="text-align:center">І ще одна сторінка нашої маленької історії.</p>
+  <div class="gallery" id="gallery3"><div class="placeholder">♡<br>Третє ваше фото</div></div>
+  <label class="upload-label" for="photo3">Додати фото</label>
+  <input id="photo3" type="file" accept="image/*">
+</section>
+
+<section class="section">
+  <h2>Кілька слів для тебе</h2>
+  <p class="letter">Сонце, дякую тобі за твою усмішку, ніжність, турботу і за всі моменти, які ми проживаємо разом.
+
+Мені хочеться й надалі створювати з тобою спогади, підтримувати тебе, обіймати й нагадувати, наскільки ти для мене важлива.
+
+Ці десять місяців — лише початок нашої історії. Я дуже ціную те, що ми маємо, і щаслива, що поруч саме ти. ❤️</p>
+  <div class="signature">Твоя ❤️</div>
+</section>
+
+<section class="section" style="text-align:center">
+  <div class="heart">♥</div>
+  <h2>Це тільки початок...</h2>
+  <p>Нехай попереду в нас буде ще безліч приводів усміхатися, мріяти й закохуватися одне в одного знову.</p>
+  <div style="color:var(--gold);letter-spacing:4px">Я ТЕБЕ КОХАЮ</div>
+</section>
+<div class="footer">MADE WITH LOVE · JUST FOR SONCE</div>
+</main>
+<script>
+const start = new Date(2026, 0, 5, 0, 0, 0);
+function tick(){
+  let diff=Math.max(0,Date.now()-start.getTime());
+  const d=Math.floor(diff/86400000); diff-=d*86400000;
+  const h=Math.floor(diff/3600000); diff-=h*3600000;
+  const m=Math.floor(diff/60000); diff-=m*60000;
+  const s=Math.floor(diff/1000);
+  document.getElementById('days').textContent=d;
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+  document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+[1,2,3].forEach(n=>{
+  document.getElementById('photo'+n).addEventListener('change',e=>{
+    const file=e.target.files[0];
+    if(!file || !file.type.startsWith('image/')) return;
+    const gallery=document.getElementById('gallery'+n);
+    gallery.innerHTML='';
+    const img=document.createElement('img');
+    img.alt='Наш спільний спогад';
+    img.src=URL.createObjectURL(file);
+    img.style.gridColumn='1 / -1';
+    img.style.height='min(62vh,420px)';
+    gallery.appendChild(img);
+  });
+});
+</script>
+</body>
+</html>
